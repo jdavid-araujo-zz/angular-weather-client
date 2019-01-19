@@ -1,8 +1,8 @@
-import { Coord } from './coord';
-import { Weather } from './weather';
-import { Main } from './main';
-import { Cloulds } from './clouds';
-import { Sys } from './sys';
+import { Coord } from './coord.model';
+import { Weather } from './weather.model';
+import { Main } from './main.mode';
+import { Cloulds } from './clouds.model';
+import { Sys } from './sys.model';
 
 export class WeatherCurrent {
     public coord: Coord;
