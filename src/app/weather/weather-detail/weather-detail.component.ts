@@ -24,9 +24,10 @@ export class WeatherDetailComponent implements OnInit {
     this.weatherService.getForecastByCity('Fortaleza', 'br').subscribe(
       res => {
         this.weather = res;
-      console.log(this.weather);
+        console.log(this.weather);
       }
     )
+
   }
 
 }

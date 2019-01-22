@@ -16,5 +16,6 @@ import { HttpUtilService } from '../shared/http-util.service';
     SharedModule
   ],
   providers: [HttpUtilService]
+
 })
 export class WeatherModule { }
