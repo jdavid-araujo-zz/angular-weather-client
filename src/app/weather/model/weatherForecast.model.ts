@@ -13,7 +13,7 @@ export class WeatherForecast {
 
     public cod: string;
 
-    public list:Array<Meassure>;
+    public list: Array<Meassure>;
 
     constructor() {
         this.city = new City();

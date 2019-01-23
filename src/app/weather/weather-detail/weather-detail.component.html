@@ -1,3 +1,6 @@
-<p>
-  weather-detail works!
-</p>
+
+  <div class="alert alert-success">
+    <h4>{{ this.weather.name}} - {{ this.weather.sys.country}}</h4>
+      <h2>{{ this.weather.main.temp}} C {{ this.weather.weather[0]?.description }}</h2>
+    <hr>
+</div>

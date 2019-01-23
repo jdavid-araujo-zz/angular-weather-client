@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { WeatherForecast } from '../model/weatherForecast.model';
+import { WeatherCurrent } from '../model/weatherCurrent.model';
 
 @Component({
   selector: 'app-weather-detail',
@@ -10,24 +11,35 @@ import { WeatherForecast } from '../model/weatherForecast.model';
 export class WeatherDetailComponent implements OnInit {
 
   localization: string;
-  weather: WeatherForecast;
+  weather: WeatherCurrent;
+  weatherForecast: WeatherForecast;
+
 
   constructor(private weatherService: WeatherService) {
-    this.weather = new WeatherForecast();
+    this.weather = new WeatherCurrent();
+    this.weatherForecast = new WeatherForecast();
   }
 
   ngOnInit() {
-    this.getWether();
+    this.getWeather();
+    this.getWeatherForecast();
   }
 
-  getWether() {
+  getWeatherForecast() {
     this.weatherService.getForecastByCity('Fortaleza', 'br').subscribe(
       res => {
-        this.weather = res;
-        console.log(this.weather);
+        this.weatherForecast = res;
+        console.log(res);
       }
-    )
-
+    );
   }
 
+  getWeather() {
+    this.weatherService.getCurrentByCity('Fortaleza', 'br').subscribe(
+      res => {
+        this.weather = res;
+        console.log(res);
+      }
+    );
+  }
 }
